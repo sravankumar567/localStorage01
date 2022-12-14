@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>movie review</title>
+</head>
+<body>
+    <h2 id="movie"> movie</h2>
+    <br />
+    <textarea rows="1" cols="20" id="name"></textarea>
+
+
+
+
+
+
+    <h4 id="class"> review </h4>
+
+    <textarea rows="8", cols="55" id="review">
+
+    </textarea>
+    <br />
+    <button id="save">save</button>
+    <script>
+        let Name=document.getElementById('name');
+        let Review= document.getElementById("review");
+        let Button=document.getElementById("save");
+        if(Name==null){
+            alert("enter the valid movie name");
+        }
+        Button.onclick= function(){
+            let userEntered=Name.value;
+            let TextEntered=Review.value;
+            localStorage.setItem("Name",userEntered
+            );
+            localStorage.setItem("Review",TextEntered);
+        }
+        let stored1=localStorage.getItem("Name");
+        let stored2=localStorage.getItem("Review");
+        if(stored1 === null){
+            Name.textContent=""
+        }
+        else{
+            Name.textContent=stored1;
+        }
+        if(stored2 === null){
+            Review.textContent=""
+        }
+        else{
+            Review.textContent=stored2;
+        }
+        
+         
+
+
+    </script>
+</body>
+</html>
