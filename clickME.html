@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>click counter</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: skyblue;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="demo">
+        you clicked the button in <span class="number" id="count"></span> times
+        </h1>
+    </div>
+    <h3 class=" hello"> click the button to increase the number of clicks</h3>
+    <br />
+    <button class="btn" id="clickButton" onclick="hello()">click</button>
+    <script>
+        let spanElement=document.getElementById("count");
+        let button=localStorage.getItem("increaseValue");
+        if(spanElement === null){
+            spanElement.textContent=0
+        }
+        else{
+            spanElement.textContent=1;
+        }
+
+        function hello(){
+            let previousValue= spanElement.textContent;
+            let increaseValue= parseInt(previousValue) + 1;
+            localStorage.setItem("increaseValue",increaseValue);
+            spanElement.textContent=increaseValue;
+         
+
+        }
+        
+
+    </script>
+    
+</body>
+</html>
