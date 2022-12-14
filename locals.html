@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local storage</title>
+</head>
+<body>
+    <textarea rows="8" cols="55" id="message">
+
+    </textarea>
+    <br />
+    <button class="buttonEL" id="savebutton">save</button>
+    <script>
+    let saveButton=document.getElementById('savebutton');
+    let userEntered=document.getElementById('message');
+    saveButton.onclick= function(){
+        let inputText=userEntered.value;
+        let set=localStorage.setItem("inputText", inputText);
+        
+    
+
+    }
+    let storedvalued=localStorage.getItem("inputText");
+    if(storedvalued== null){
+        userEntered.textContent="";
+        
+    }
+    else{
+        userEntered.textContent=storedvalued;
+    }
+
+
+
+    </script>
+    
+</body>
+</html>
